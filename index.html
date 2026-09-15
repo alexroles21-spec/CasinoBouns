@@ -6,24 +6,38 @@
     <title>Bônus Exclusivo Aviator Brasil</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
-        body { background: radial-gradient(circle at center, #1a0933 0%, #05020a 100%); color: #fff; text-align: center; padding: 20px 15px; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-        .container { max-width: 440px; width: 100%; background: rgba(23, 15, 38, 0.95); padding: 30px 20px; border-radius: 24px; border: 2px solid #ff0055; box-shadow: 0 0 35px rgba(255, 0, 85, 0.4), inset 0 0 15px rgba(255, 0, 85, 0.2); backdrop-filter: blur(10px); position: relative; overflow: hidden; }
-        .badge { background: linear-gradient(90deg, #ff0055, #ff5500); color: #fff; padding: 8px 18px; border-radius: 50px; font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; display: inline-block; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(255, 0, 85, 0.5); }
-        h1 { font-size: 26px; font-weight: 900; margin-bottom: 12px; line-height: 1.2; text-transform: uppercase; }
+        body { background: radial-gradient(circle at center, #1a0933 0%, #05020a 100%); color: #fff; text-align: center; padding: 15px 10px; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .container { max-width: 440px; width: 100%; background: rgba(23, 15, 38, 0.95); padding: 25px 15px; border-radius: 24px; border: 2px solid #8a2be2; box-shadow: 0 0 35px rgba(138, 43, 226, 0.5), inset 0 0 15px rgba(138, 43, 226, 0.3); backdrop-filter: blur(10px); position: relative; overflow: hidden; }
+        
+        .top-decor { font-size: 14px; font-weight: 800; color: #ffd700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6); }
+        .badge { background: linear-gradient(90deg, #8a2be2, #4b0082); color: #fff; padding: 8px 18px; border-radius: 50px; font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; display: inline-block; margin-bottom: 15px; box-shadow: 0 4px 15px rgba(138, 43, 226, 0.6); border: 1px solid #ffd700; }
+        
+        h1 { font-size: 24px; font-weight: 900; margin-bottom: 10px; line-height: 1.2; text-transform: uppercase; }
         h1 span { color: #00ff88; text-shadow: 0 0 12px rgba(0, 255, 136, 0.6); }
-        p { color: #d1d5db; font-size: 15px; margin-bottom: 25px; line-height: 1.5; font-weight: 500; }
-        .promo-box { background: rgba(0, 0, 0, 0.6); border: 2px dashed #00ff88; border-radius: 16px; padding: 16px; margin-bottom: 25px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
-        .promo-title { font-size: 13px; color: #a1a1aa; text-transform: uppercase; font-weight: 700; }
-        .code-row { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; }
-        .promo-code { font-size: 24px; font-weight: 900; color: #00ff88; letter-spacing: 2px; }
-        .copy-btn { background: #00ff88; color: #000; border: none; padding: 8px 14px; border-radius: 8px; font-size: 12px; font-weight: 900; cursor: pointer; text-transform: uppercase; transition: 0.2s; }
+        p { color: #d1d5db; font-size: 14px; margin-bottom: 20px; line-height: 1.4; font-weight: 500; }
+        
+        /* إطار الكود برومو مضبوط ومستقر داخل الحاوية */
+        .promo-box { background: rgba(0, 0, 0, 0.6); border: 2px dashed #00ff88; border-radius: 16px; padding: 12px 10px; margin: 0 auto 15px auto; width: 95%; max-width: 380px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .promo-title { font-size: 11px; color: #a1a1aa; text-transform: uppercase; font-weight: 700; }
+        .code-row { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 0 5px; gap: 5px; }
+        .promo-code { font-size: 18px; font-weight: 900; color: #00ff88; letter-spacing: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .copy-btn { background: #00ff88; color: #000; border: none; padding: 8px 12px; border-radius: 8px; font-size: 11px; font-weight: 900; cursor: pointer; text-transform: uppercase; transition: 0.2s; flex-shrink: 0; }
         .copy-btn:active { transform: scale(0.95); }
-        .btn { display: block; background: linear-gradient(135deg, #00ff88 0%, #00b359 100%); color: #000; font-size: 20px; font-weight: 900; text-decoration: none; padding: 18px; border-radius: 16px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 0 25px rgba(0, 255, 136, 0.6); animation: pulse 1.5s infinite; }
-        @keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 255, 136, 0.5); } 50% { transform: scale(1.04); box-shadow: 0 0 35px rgba(0, 255, 136, 0.8); } 100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 255, 136, 0.5); } }
+        
+        /* السهم والملاحظة التوجيهية لتحت */
+        .arrow-section { margin: 10px 0 15px 0; color: #ffd700; font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; animation: bounce 1.2s infinite; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+        
+        .btn { display: block; background: linear-gradient(135deg, #00ff88 0%, #00b359 100%); color: #000; font-size: 19px; font-weight: 900; text-decoration: none; padding: 16px; border-radius: 16px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 0 25px rgba(0, 255, 136, 0.6); animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 255, 136, 0.5); } 50% { transform: scale(1.03); box-shadow: 0 0 35px rgba(0, 255, 136, 0.8); } 100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 255, 136, 0.5); } }
+        
+        .bottom-decor { margin-top: 15px; font-size: 13px; color: #00ff88; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="top-decor">⚡ PAGAMENTO INSTANTÂNEO 💸</div>
+        
         <span class="badge">🔥 BÔNUS EXCLUSIVO BRASIL 🔥</span>
         <h1>GANHE <span>500% DE BÔNUS</span> NO SEU 1º DEPÓSITO!</h1>
         <p>Aproveite agora! Multiplique suas chances de forrar no <strong>Aviator</strong> e jogue com banca alta hoje mesmo!</p>
@@ -36,7 +50,13 @@
             </div>
         </div>
 
+        <div class="arrow-section">
+            CLIQUE ABAIXO PARA LUCRO RÁPIDO ⬇️
+        </div>
+
         <a href="https://one-vv3870.com/casino/list?open=register&p=1cw1" class="btn">RESGATAR BÔNUS AGORA</a>
+        
+        <div class="bottom-decor">🚀 LUCROS RÁPIDOS & SAQUES IMEDIATOS 💰</div>
     </div>
 
     <script>
@@ -45,8 +65,8 @@
             navigator.clipboard.writeText(codeText);
             const btn = document.querySelector('.copy-btn');
             btn.innerText = 'Copiado!';
-            btn.style.background = '#ff0055';
-            btn.style.color = '#fff';
+            btn.style.background = '#ffd700';
+            btn.style.color = '#000';
             setTimeout(() => {
                 btn.innerText = 'Copiar';
                 btn.style.background = '#00ff88';
