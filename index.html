@@ -9,8 +9,8 @@
         body { background: radial-gradient(circle at center, #1a0933 0%, #05020a 100%); color: #fff; text-align: center; padding: 15px 10px; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
         .container { max-width: 440px; width: 100%; background: rgba(23, 15, 38, 0.95); padding: 25px 15px; border-radius: 24px; border: 2px solid #8a2be2; box-shadow: 0 0 35px rgba(138, 43, 226, 0.5), inset 0 0 15px rgba(138, 43, 226, 0.3); backdrop-filter: blur(10px); position: relative; overflow: hidden; }
         
-        .timer-box { background: rgba(255, 0, 0, 0.2); border: 1px solid #ff4444; color: #ffdddd; padding: 6px 12px; border-radius: 8px; font-size: 12px; font-weight: 800; margin-bottom: 12px; display: inline-block; text-transform: uppercase; }
-        .timer-box span { color: #ffd700; font-size: 14px; font-weight: 900; }
+        .timer-box { background: rgba(255, 215, 0, 0.15); border: 1px solid #ffd700; color: #fff; padding: 8px 12px; border-radius: 12px; font-size: 12px; font-weight: 800; margin-bottom: 15px; display: inline-block; text-transform: uppercase; letter-spacing: 0.5px; }
+        .timer-box span { color: #00ff88; font-size: 15px; font-weight: 900; text-shadow: 0 0 8px rgba(0, 255, 136, 0.6); }
 
         .top-decor { font-size: 14px; font-weight: 800; color: #ffd700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.6); }
         .badge { background: linear-gradient(90deg, #8a2be2, #4b0082); color: #fff; padding: 8px 18px; border-radius: 50px; font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; display: inline-block; margin-bottom: 15px; box-shadow: 0 4px 15px rgba(138, 43, 226, 0.6); border: 1px solid #ffd700; }
@@ -43,7 +43,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="timer-box">⏱️ BÔNUS EXPIRA EM: <span id="timer">04:59</span></div>
+        <div class="timer-box">⚡ BÔNUS RESERVADO POR: <span id="timer">04:59</span></div>
 
         <div class="top-decor">⚡ PAGAMENTO INSTANTÂNEO & LUCROS RÁPIDOS 💸</div>
         
@@ -106,12 +106,16 @@
         // Countdown Timer
         let time = 299;
         const timerElement = document.getElementById('timer');
-        setInterval(() => {
+        const interval = setInterval(() => {
             const minutes = Math.floor(time / 60);
             let seconds = time % 60;
             seconds = seconds < 10 ? '0' + seconds : seconds;
             timerElement.innerHTML = `0${minutes}:${seconds}`;
-            if (time > 0) time--;
+            if (time > 0) {
+                time--;
+            } else {
+                clearInterval(interval);
+            }
         }, 1000);
     </script>
 </body>
